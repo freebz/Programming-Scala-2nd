@@ -1,0 +1,7 @@
+package progscala2.objectsystem.overrides
+
+final class Fixed {
+  def doSomething = "Fixed did somthing!"
+}
+
+class Changable1 extends Fixed	// COMPILATION ERROR
