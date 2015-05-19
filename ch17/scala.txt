@@ -1,0 +1,112 @@
+        <div class="scala-logo">
+          <img src="/resources/img/scala-logo-white.png" alt="Scala Logo" />
+          <!-- <div class="spiral-logo"><img src="/resources/img/scala-spiral-white.png"/></div> -->
+          <!-- <div class="scala-text">Scala</div> -->
+    <a href="http://github.com/scala/scala"><img src="/resources/img/github-logo.png" alt="GitHub Logo" /></a>
+  <li id="scala-lang-twitter">
+    <a href="http://twitter.com/scala_lang"><img src="/resources/img/twitter-logo-white.png" alt="Twitter Logo" /></a>
+          <a class="learn-more-btn" href="/what-is-scala.html">Learn More</a>
+  <a class="central-btn api" href="http://www.scala-lang.org/api/">API Docs&nbsp;&nbsp;&nbsp;&nbsp;</a>
+  <div class="big-scala-spiral"><img src="/resources/img/smooth-spiral.png" alt="Spiral" /></div>
+  <div class="central-btn scala-version"><span class="superbold">Scala</span><br/>2.11.6</div>
+      <p class="getting-started"><b>API: </b><a href="http://www.scala-lang.org/api/current/"><b>Current</b></a> | <a href="http://www.scala-lang.org/files/archive/nightly/2.11.x/api/2.11.x/"><b>Nightly</b></a></p>
+          <a class="learn-more-btn" href="/what-is-scala.html">Learn More</a>
+  <figcaption>Author.scala</figcaption>
+  <pre><code>import static scala.collection.JavaConversions.asJavaCollection;
+  <pre><code>scala> class Person(val name: String, val age: Int) {
+scala> def underagePeopleNames(persons: List[Person]) = {
+scala> def createRandomPeople() = {
+scala> val people = createRandomPeople()
+scala> underagePeopleNames(people)
+    <div id="scaladays">
+      <a id="scaladays-register-btn" href="http://scaladays.org/">More Info</a>
+    <div id="scalawksp">
+      <a id="scalawksp-register-btn" href="http://lampwww.epfl.ch/~hmiller/scala2014">More Info</a>
+        <!-- <div class="add-event">or <a href="https://github.com/scala/scala-lang/tree/master/events">add an event</a></div> -->
+   <div class="add-event"><a href="/events">See more events</a> or <a href="https://github.com/scala/scala-lang/tree/master/events">add one to our feed</a></div>
+        <!-- <div class="add-training">or <a href="https://github.com/scala/scala-lang/tree/master/training">add a training</a></div> -->
+        <div class="add-training"><a href="/training">See more trainings</a> or <a href="https://github.com/scala/scala-lang/tree/master/training">add one to our feed</a></div>
+* Get started with the [Hello Scala 2.11 template](https://typesafe.com/activator/template/hello-scala-2_11) in [Typesafe Activator](https://typesafe.com/platform/getstarted)
+<li>Download a distribution from <a href='http://scala-lang.org/download/2.12.0-M1.html'>scala-lang.org</a></li>
+<li>Obtain it via <a href='http://search.maven.org/?search%7Cga%7C1%7Cg%3A%22org.scala-lang%22%20AND%20v%3A%222.11.0%22#search%7Cga%7C1%7Cg%3Aorg.scala-lang%20AND%20v%3A2.12.0-M1'>Maven Central</a></li>
+<p>Code that compiles on 2.11.x without deprecation warnings should compile on 2.12.x (we do not guarantee this for experimental APIs, such as reflection). If not, <a href='https://issues.scala-lang.org'>please file an issue</a>.</p>
+<li>New backend and optimizer. The &#8220;GenBCode&#8221; backend, which is already available in Scala 2.11 using the <code>-Ybackend:GenBCode</code> compiler option, will be enabled by default. Scala 2.12 will also ship with a new inliner and bytecode optimizer. We keep track of issues and work items for the new optimizer on the <a href='https://github.com/scala-opt/scala/issues'>scala-opt repostiory issue tracker</a>.</li>
+<p>Up the current milestone, the Scala team and contributors <a href='https://issues.scala-lang.org/browse/SI-9200?jql=project%20%3D%20SI%20and%20fixVersion%20%3E%3D%20%222.12.0-M1%22%20and%20fixVersion%20%3C%3D%20%222.12.0%22%20and%20resolution%20%3D%20fixed'>fixed 47 bugs</a> that are exclusive to Scala 2.12.0. During the development cycle of Scala 2.12, we will continue to backport issues to 2.11 whenever feasible. With the release of 2.12.0, backports to 2.11 will be dialed back.</p>
+* [SI-4577](https://issues.scala-lang.org/browse/SI-4577) Compile `x match { case _ : Foo.type => }` to `Foo eq x`, as specified. It used to be `Foo == x` (without warning). If that's what you meant, write `case Foo =>`.
+* [SI-6809](https://issues.scala-lang.org/browse/SI-6809) Case classes without a parameter list are no longer allowed.
+* [SI-7296](https://issues.scala-lang.org/browse/SI-7296) Case classes with > 22 parameters are now allowed.
+* [#3746](https://github.com/scala/scala/pull/3746) Generation of bean info classes using the `@BeanInfo` annotation.
+<li>The Scala actors library is no longer released with Scala 2.12. We recommend that you use the <a href='http://akka.io/'>Akka actors library</a> instead. To migrate your code, follow the <a href='http://docs.scala-lang.org/overviews/core/actors-migration-guide.html'>Scala actors migration guide</a> before upgrading your project to Scala 2.12.</li>
+<li>The Scala distribution archives and the <code>scala-library-all</code> maven dependency no longer inlcude Akka actors. To use the Akka actors library, add it to your project <a href='http://doc.akka.io/docs/akka/2.3.10/intro/getting-started.html'>as a dependency</a>.</li>
+<p>These release notes are <a href='https://github.com/scala/make-release-notes/blob/2.12.x/hand-written.md'>hosted on GitHub</a> and are continuously updated during the Scala 2.12.0 release cycle. You are kindly invited to contribute!</p>
+<p>Please file any bugs you encounter on <a href='https://issues.scala-lang.org'>our issue tracker</a>. If you&#8217;re unsure whether something is a bug, please contact the <a href='https://groups.google.com/forum/?fromgroups#!forum/scala-user'>scala-user</a> mailing list. Before creating a new issue, search search the issue tracker to see if your bug has already been reported.</p>
+<h3 id='scala_ide_for_eclipse'>Scala IDE for Eclipse</h3>
+The Scala IDE with this release built in is [available from this update site](http://download.scala-ide.org/sdk/helium/e38/scala211/stable/site/) for [Eclipse 4.2/4.3 (Juno/Kepler)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/keplersr2). Please have a look at the [getting started guide](http://scala-ide.org/docs/user/gettingstarted.html) for more info.
+<p>Please refer to the list of <a href='https://github.com/scala/make-release-notes/blob/2.12.x/projects-2.12.md'>libraries and frameworks available for Scala 2.12</a>.</p>
+<p>Note that so far we&#8217;ve only talked about the jars generated by scalac for the standard library and reflection. Our policies do not extend to the meta-issue: ensuring binary compatibility for bytecode generated from identical sources, by different version of scalac? (The same problem exists for compiling on different JDKs.) While we strive to achieve this, it&#8217;s not something we can test in general. Notable examples where we know meta-binary compatibility is hard to achieve: specialisation and the optimizer.</p>
+<p>We guarantee forwards and backwards compatibility of the <code>&quot;org.scala-lang&quot; % &quot;scala-library&quot; % &quot;2.12.x&quot;</code> and <code>&quot;org.scala-lang&quot; % &quot;scala-reflect&quot; % &quot;2.12.x&quot;</code> artifacts, except for anything under the <code>scala.reflect.internal</code> package, as scala-reflect is still experimental. We also strongly discourage relying on the stability of <code>scala.concurrent.impl</code> and <code>scala.reflect.runtime</code>, though we will only break compatibility for severe bugs here.</p></div>
+        <a id="twitter-btn" href="https://twitter.com/scala_lang">Follow Scala on Twitter</a>
+        <br/><a style="border-bottom: 0px;" href="https://twitter.com/scala_lang"><img style="padding-top: 8px;" src="/resources/img/twitter-logo-white-lg.png" alt="white Twitter logo"/></a>
+      <li><a href="http://www.scala-lang.org/api/current/index.html#package">API</a></li>
+      <li><a href="http://docs.scala-lang.org/overviews/">Overviews/Guides</a></li>
+      <li><a href="http://docs.scala-lang.org/tutorials/">Tutorials</a></li>
+      <li><a href="/contribute/scala-fame.html">Contributor's Hall of Fame</a></li>
+      <div class="scala-logo-footer">
+        <img src="/resources/img/scala-logo-red-footer.png" alt="Scala footer logo" />
+    <script src="/resources/js/vendor/prettify/lang-scala.js" type="text/javascript" ></script>
+        <div class="scala-logo">
+          <img src="/resources/img/scala-logo-white.png" alt="Scala Logo" />
+          <!-- <div class="spiral-logo"><img src="/resources/img/scala-spiral-white.png"/></div> -->
+          <!-- <div class="scala-text">Scala</div> -->
+    <a href="http://github.com/scala/scala"><img src="/resources/img/github-logo.png" alt="GitHub Logo" /></a>
+  <li id="scala-lang-twitter">
+    <a href="http://twitter.com/scala_lang"><img src="/resources/img/twitter-logo-white.png" alt="Twitter Logo" /></a>
+          <a class="learn-more-btn" href="/what-is-scala.html">Learn More</a>
+  <a class="central-btn api" href="http://www.scala-lang.org/api/">API Docs&nbsp;&nbsp;&nbsp;&nbsp;</a>
+  <div class="big-scala-spiral"><img src="/resources/img/smooth-spiral.png" alt="Spiral" /></div>
+  <div class="central-btn scala-version"><span class="superbold">Scala</span><br/>2.11.6</div>
+      <p class="getting-started"><b>API: </b><a href="http://www.scala-lang.org/api/current/"><b>Current</b></a> | <a href="http://www.scala-lang.org/files/archive/nightly/2.11.x/api/2.11.x/"><b>Nightly</b></a></p>
+          <a class="learn-more-btn" href="/what-is-scala.html">Learn More</a>
+  <figcaption>Author.scala</figcaption>
+  <pre><code>import static scala.collection.JavaConversions.asJavaCollection;
+  <pre><code>scala> class Person(val name: String, val age: Int) {
+scala> def underagePeopleNames(persons: List[Person]) = {
+scala> def createRandomPeople() = {
+scala> val people = createRandomPeople()
+scala> underagePeopleNames(people)
+    <div id="scaladays">
+      <a id="scaladays-register-btn" href="http://scaladays.org/">More Info</a>
+    <div id="scalawksp">
+      <a id="scalawksp-register-btn" href="http://lampwww.epfl.ch/~hmiller/scala2014">More Info</a>
+        <!-- <div class="add-event">or <a href="https://github.com/scala/scala-lang/tree/master/events">add an event</a></div> -->
+   <div class="add-event"><a href="/events">See more events</a> or <a href="https://github.com/scala/scala-lang/tree/master/events">add one to our feed</a></div>
+        <!-- <div class="add-training">or <a href="https://github.com/scala/scala-lang/tree/master/training">add a training</a></div> -->
+        <div class="add-training"><a href="/training">See more trainings</a> or <a href="https://github.com/scala/scala-lang/tree/master/training">add one to our feed</a></div>
+* Get started with the [Hello Scala 2.11 template](https://typesafe.com/activator/template/hello-scala-2_11) in [Typesafe Activator](https://typesafe.com/platform/getstarted)
+<li>Download a distribution from <a href='http://scala-lang.org/download/2.12.0-M1.html'>scala-lang.org</a></li>
+<li>Obtain it via <a href='http://search.maven.org/?search%7Cga%7C1%7Cg%3A%22org.scala-lang%22%20AND%20v%3A%222.11.0%22#search%7Cga%7C1%7Cg%3Aorg.scala-lang%20AND%20v%3A2.12.0-M1'>Maven Central</a></li>
+<p>Code that compiles on 2.11.x without deprecation warnings should compile on 2.12.x (we do not guarantee this for experimental APIs, such as reflection). If not, <a href='https://issues.scala-lang.org'>please file an issue</a>.</p>
+<li>New backend and optimizer. The &#8220;GenBCode&#8221; backend, which is already available in Scala 2.11 using the <code>-Ybackend:GenBCode</code> compiler option, will be enabled by default. Scala 2.12 will also ship with a new inliner and bytecode optimizer. We keep track of issues and work items for the new optimizer on the <a href='https://github.com/scala-opt/scala/issues'>scala-opt repostiory issue tracker</a>.</li>
+<p>Up the current milestone, the Scala team and contributors <a href='https://issues.scala-lang.org/browse/SI-9200?jql=project%20%3D%20SI%20and%20fixVersion%20%3E%3D%20%222.12.0-M1%22%20and%20fixVersion%20%3C%3D%20%222.12.0%22%20and%20resolution%20%3D%20fixed'>fixed 47 bugs</a> that are exclusive to Scala 2.12.0. During the development cycle of Scala 2.12, we will continue to backport issues to 2.11 whenever feasible. With the release of 2.12.0, backports to 2.11 will be dialed back.</p>
+* [SI-4577](https://issues.scala-lang.org/browse/SI-4577) Compile `x match { case _ : Foo.type => }` to `Foo eq x`, as specified. It used to be `Foo == x` (without warning). If that's what you meant, write `case Foo =>`.
+* [SI-6809](https://issues.scala-lang.org/browse/SI-6809) Case classes without a parameter list are no longer allowed.
+* [SI-7296](https://issues.scala-lang.org/browse/SI-7296) Case classes with > 22 parameters are now allowed.
+* [#3746](https://github.com/scala/scala/pull/3746) Generation of bean info classes using the `@BeanInfo` annotation.
+<li>The Scala actors library is no longer released with Scala 2.12. We recommend that you use the <a href='http://akka.io/'>Akka actors library</a> instead. To migrate your code, follow the <a href='http://docs.scala-lang.org/overviews/core/actors-migration-guide.html'>Scala actors migration guide</a> before upgrading your project to Scala 2.12.</li>
+<li>The Scala distribution archives and the <code>scala-library-all</code> maven dependency no longer inlcude Akka actors. To use the Akka actors library, add it to your project <a href='http://doc.akka.io/docs/akka/2.3.10/intro/getting-started.html'>as a dependency</a>.</li>
+<p>These release notes are <a href='https://github.com/scala/make-release-notes/blob/2.12.x/hand-written.md'>hosted on GitHub</a> and are continuously updated during the Scala 2.12.0 release cycle. You are kindly invited to contribute!</p>
+<p>Please file any bugs you encounter on <a href='https://issues.scala-lang.org'>our issue tracker</a>. If you&#8217;re unsure whether something is a bug, please contact the <a href='https://groups.google.com/forum/?fromgroups#!forum/scala-user'>scala-user</a> mailing list. Before creating a new issue, search search the issue tracker to see if your bug has already been reported.</p>
+<h3 id='scala_ide_for_eclipse'>Scala IDE for Eclipse</h3>
+The Scala IDE with this release built in is [available from this update site](http://download.scala-ide.org/sdk/helium/e38/scala211/stable/site/) for [Eclipse 4.2/4.3 (Juno/Kepler)](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/keplersr2). Please have a look at the [getting started guide](http://scala-ide.org/docs/user/gettingstarted.html) for more info.
+<p>Please refer to the list of <a href='https://github.com/scala/make-release-notes/blob/2.12.x/projects-2.12.md'>libraries and frameworks available for Scala 2.12</a>.</p>
+<p>Note that so far we&#8217;ve only talked about the jars generated by scalac for the standard library and reflection. Our policies do not extend to the meta-issue: ensuring binary compatibility for bytecode generated from identical sources, by different version of scalac? (The same problem exists for compiling on different JDKs.) While we strive to achieve this, it&#8217;s not something we can test in general. Notable examples where we know meta-binary compatibility is hard to achieve: specialisation and the optimizer.</p>
+<p>We guarantee forwards and backwards compatibility of the <code>&quot;org.scala-lang&quot; % &quot;scala-library&quot; % &quot;2.12.x&quot;</code> and <code>&quot;org.scala-lang&quot; % &quot;scala-reflect&quot; % &quot;2.12.x&quot;</code> artifacts, except for anything under the <code>scala.reflect.internal</code> package, as scala-reflect is still experimental. We also strongly discourage relying on the stability of <code>scala.concurrent.impl</code> and <code>scala.reflect.runtime</code>, though we will only break compatibility for severe bugs here.</p></div>
+        <a id="twitter-btn" href="https://twitter.com/scala_lang">Follow Scala on Twitter</a>
+        <br/><a style="border-bottom: 0px;" href="https://twitter.com/scala_lang"><img style="padding-top: 8px;" src="/resources/img/twitter-logo-white-lg.png" alt="white Twitter logo"/></a>
+      <li><a href="http://www.scala-lang.org/api/current/index.html#package">API</a></li>
+      <li><a href="http://docs.scala-lang.org/overviews/">Overviews/Guides</a></li>
+      <li><a href="http://docs.scala-lang.org/tutorials/">Tutorials</a></li>
+      <li><a href="/contribute/scala-fame.html">Contributor's Hall of Fame</a></li>
+      <div class="scala-logo-footer">
+        <img src="/resources/img/scala-logo-red-footer.png" alt="Scala footer logo" />
+    <script src="/resources/js/vendor/prettify/lang-scala.js" type="text/javascript" ></script>
